@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1> Gender Predict </h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="experience" placeholder="gen" step="0.01" min="0" max="100" required="required" />
+        <input type="text" name="test_score" placeholder="meanfreq" step="0.01" min="0" max="100" required="required" />
+    	<input type="text" name="a" placeholder="sd" step="0.01" min="0" max="100" required="required" />
+		<input type="text" name="b" placeholder="median" step="0.01" min="0" max="100" required="required" />
+		<input type="text" name="c" placeholder="Q25" step="0.01" min="0" max="100" required="required" />
+		<input type="text" name="d" placeholder="Q75" step="0.01" min="0" max="100" required="required" />
+		<input type="text" name="e" placeholder="IQR" step="0.01" min="0" max="100" required="required" />
+		<input type="text" name="f" placeholder="skew" step="0.01" min="0" max="100" required="required" />
+		<input type="text" name="g" placeholder="kurt" step="0.01" min="0" max="100" required="required" />
+		<input type="text" name="h" placeholder="sp.ent" step="0.01" min="0" max="100" required="required" />
+		<input type="text" name="i" placeholder="sfm" step="0.01" min="0" max="100" required="required" />
+		<input type="text" name="j" placeholder="centroid" step="0.01" min="0" max="100" required="required" />
+		<input type="text" name="k" placeholder="meanfun" step="0.01" min="0" max="100" required="required" />
+		<input type="text" name="l" placeholder="minfun" step="0.01" min="0" max="100" required="required" />
+		<input type="text" name="k" placeholder="maxdom" step="0.01" min="0" max="100" required="required" />
+		<input type="text" name="m" placeholder="meandom" step="0.01" min="0" max="100" required="required" />
+		<input type="text" name="n" placeholder="mindom" step="0.01" min="0" max="100" required="required" />
+		<input type="text" name="o" placeholder="maxdom" step="0.01" min="0" max="100" required="required" />
+		<input type="text" name="p" placeholder="dfrange" step="0.01" min="0" max="100" required="required" />
+		<input type="text" name="z" placeholder="modindx" step="0.01" min="0" max="100" required="required" />
+		<input type="text" name="mm" placeholder="path" step="0.01" min="0" max="100" required="required" />
+		
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
